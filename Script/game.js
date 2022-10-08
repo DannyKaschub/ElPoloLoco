@@ -1,49 +1,49 @@
 let canvas;
 let ctx;
-let Keybord = new Keybord();
+let keyboard = new Keybord();
 
 let world;
 
 function init(){
     canvas = document.getElementById('canvas');
-    world = new World(canvas, Keyboard);
+    world = new World(canvas, keyboard);
 
     console.log('mein charakter ist ', world.character);
 }
 
 window.addEventListener("keydown", (e) => {
-    if (e.keyCode == 39) {
-        Keyboard.RIGHT = true;
+    if(e.keyCode == 39) {
+        keyboard.RIGHT = true;
     }
-    if (e.keyCode == 37) {
-        Keyboard.LEFT = true;
+    if(e.keyCode == 37) {
+        keyboard.LEFT = true;
     }
-    if (e.keyCode == 38) {
-        Keyboard.UP = true;
+    if(e.keyCode == 38) {
+        keyboard.UP = true;
     }
-    if (e.keyCode == 40) {
-        Keyboard.DOWN = true;
+    if(e.keyCode == 40) {
+        keyboard.DOWN = true;
     }
-    if (e.keyCode == 32) {
-        Keyboard.SPACE = true;
+    if(e.keyCode == 32) {
+        keyboard.SPACE = true;
     }
 });
 
 
 window.addEventListener("keyup", (e) => {
     if (e.keyCode == 39) {
-        Keyboard.RIGHT = false;
+    keyboard.RIGHT = false;
     }
     if (e.keyCode == 37) {
-        Keyboard.LEFT = false;
+        keyboard.LEFT = false;
     }
     if (e.keyCode == 38) {
-        Keyboard.UP = false;
+        keyboard.UP = false;
     }
     if (e.keyCode == 40) {
-        Keyboard.DOWN = false;
+        keyboard.DOWN = false;
     }
     if (e.keyCode == 32) {
-        Keyboard.SPACE = false;
+        keyboard.SPACE = false;
     }
 });
