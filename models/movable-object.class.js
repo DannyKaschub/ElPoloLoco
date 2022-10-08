@@ -1,12 +1,27 @@
 class MovableObject{
     x = 120;
-    y = 280;
+    y = 400;
     height = 150;
     width = 100;
     img;
     currentImage = 0;
     speed = 0.3;
     otherDirection = false;
+    speedy = 0;
+    acceleration = 2.5;
+
+    applyGravity(){
+        setInterval(() =>{
+            if(this.isAboveGround() || this.speedy > 0) {
+                this.y -= this.speedy;
+                this.speedy -= this.acceleration;
+            }
+        },1000/ 25);
+    }
+
+    isAboveGround(){
+        return this.y <130;
+    }
 
     imageCache = {};
 
