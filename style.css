@@ -1,11 +1,94 @@
+@font-face {
+    font-family: 'zabars';
+    src: url('fonts/zabars.ttf') format('truetype');
+}
 
-body{
+body {
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url('img_pollo_locco/img/5_background/desert_background.png');
+    background-position: center;
+    font-family: 'zabars', Arial, Helvetica, sans-serif;
+}
+
+.d-none {
+    display: none;
+}
+
+h1 {
+    font-size: 72px;
+    letter-spacing: 5px;
+}
+
+canvas {
+    background-color: black;
+    display: block;
+}
+
+.startIMG {
+    height: 60vh;
+    width: 60vw;
+    margin-bottom: 30px;
+}
+
+.startbutton {
+    height: 100px;
+    width: 250px;
+    border-radius: 20px;
+    font-size: 32px;
+    background-color: rgb(255, 166, 0);
+    border-width: 10px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.inputs {
+    display: flex;
+    width: 60vw;
+    justify-content: space-around;
+}
+
+.inputs div {
+    display: flex;
     align-items: center;
 }
 
+.icon {
+    width: 100px;
+    height: 100px;
+}
 
-canvas{
-    background-color: black;
+.icon_round {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.rotate90 {
+    transform: rotate(90deg);
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
+span {
+    font-size: 56px;
+}
+
+/*sorgt dafür dass das canvas sich bei kleinen bildschirmen mit verkleinert*/
+@media only screen and (max-width: 720px) {
+    canvas {
+        width: 100vh;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas {
+        height: 100vh;
+    }
 }

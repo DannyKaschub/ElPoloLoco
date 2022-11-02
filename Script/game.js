@@ -4,6 +4,14 @@ let keyboard = new Keybord();
 
 let world;
 
+function startGame() {
+    document.getElementById('startIMG').classList.add('d-none');
+    document.getElementById('startbutton').classList.add('d-none');
+    document.getElementById('inputs').classList.add('d-none');
+    document.getElementById('canvas').classList.remove('d-none');
+    init()
+}
+
 function init(){
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
@@ -28,7 +36,7 @@ window.addEventListener("keydown", (e) => {
         keyboard.SPACE = true;
     }
     if(e.keyCode == 68) {
-        keyboard.SPACE = true;
+        keyboard.D = true;
     }
 });
 
@@ -50,6 +58,6 @@ window.addEventListener("keyup", (e) => {
         keyboard.SPACE = false;
     }
     if (e.keyCode == 68) {
-        keyboard.SPACE = false;
+        keyboard.D = false;
     }
 });

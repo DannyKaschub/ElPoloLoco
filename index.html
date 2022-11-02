@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>El Pollo Loco</title>
     <link rel="stylesheet" href="style.css">
 
     <script src="models/drawable-object.class.js"></script>
@@ -22,10 +22,36 @@
     <script src="levels/level1.js"></script>
     <script src="Script/game.js"></script>
 </head>
-<body onload="init()">
-    <h1>El Pollo Loco</h1>
+<body>
+    <h1 class="header" id="header">El Pollo Loco</h1>
+    <div id="startIMG">
+        <img class="startIMG" src="img_pollo_locco/img/9_intro_outro_screens/start/startscreen_1.png" alt="">
+    </div>
 
-    <canvas id="canvas" width="720px" height="480px">
+    <div id="startbutton">
+        <button class="startbutton" onclick="startGame()">Start Game</button>
+    </div>
+
+    <div class="inputs" id="inputs">
+        <div>
+            <img class="icon" src="img_pollo_locco/img/10_icons/arrow.png" alt="">
+            <span>Left</span>
+        </div>
+        <div>
+            <img class="icon rotate90" src="img_pollo_locco/img/10_icons/arrow.png" alt="">
+            <span>Jump</span>
+        </div>
+        <div>
+            <img class="icon rotate180" src="img_pollo_locco/img/10_icons/arrow.png" alt="">
+            <span>Right</span>
+        </div>
+        <div>
+            <img class="icon_round" src="img_pollo_locco/img/10_icons/d_letter.png" alt="">
+            <span>Throw</span>
+        </div>
+    </div>
+
+    <canvas class="d-none" id="canvas" width="720px" height="480px">
 
     </canvas>
     
