@@ -7,6 +7,8 @@ class World {
     keyboard;
     camera_x = -0;
     statusBar = new Statusbar();
+    coinbar = new coinbar();
+    ammobar = new ammobar();
     throwableObjects = [];
 
 
@@ -56,6 +58,8 @@ class World {
         this.addToMap(this.character);
         this.ctx.translate(-this.camera_x, 0);
         this.addToMap(this.statusBar);
+        this.addToMap(this.coinbar);
+        this.addToMap(this.ammobar);
         this.addObjectsToMap(this.throwableObjects);
 
         let self = this;

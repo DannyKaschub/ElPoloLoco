@@ -1,12 +1,12 @@
-class Statusbar extends DrawableObject {
+class ammobar extends DrawableObject {
 
     IMAGES = [
-        'img_pollo_locco/img/7_statusbars/1_statusbar/2_statusbar_health/green/0.png',
-        'img_pollo_locco/img/7_statusbars/1_statusbar/2_statusbar_health/green/20.png',
-        'img_pollo_locco/img/7_statusbars/1_statusbar/2_statusbar_health/green/40.png',
-        'img_pollo_locco/img/7_statusbars/1_statusbar/2_statusbar_health/green/60.png',
-        'img_pollo_locco/img/7_statusbars/1_statusbar/2_statusbar_health/green/80.png',
-        'img_pollo_locco/img/7_statusbars/1_statusbar/2_statusbar_health/green/100.png'
+        'img_pollo_locco/img/7_statusbars/1_statusbar/3_statusbar_bottle/green/0.png',
+        'img_pollo_locco/img/7_statusbars/1_statusbar/3_statusbar_bottle/green/20.png',
+        'img_pollo_locco/img/7_statusbars/1_statusbar/3_statusbar_bottle/green/40.png',
+        'img_pollo_locco/img/7_statusbars/1_statusbar/3_statusbar_bottle/green/60.png',
+        'img_pollo_locco/img/7_statusbars/1_statusbar/3_statusbar_bottle/green/80.png',
+        'img_pollo_locco/img/7_statusbars/1_statusbar/3_statusbar_bottle/green/100.png'
     ];
 
     percentage = 100;
@@ -16,11 +16,11 @@ class Statusbar extends DrawableObject {
         this.loadImages(this.IMAGES);
         this.x = 20;
         this.y = 0;
-        this.width = 200;
+        this.width = 110;
         this.height = 60;
         this.setPercentage(100);
     }
- 
+
     setPercentage(percentage) {
         this.percentage = percentage;
         let path = this.IMAGES[this.resolveImageIndex()];

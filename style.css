@@ -16,7 +16,7 @@ body {
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 h1 {
@@ -46,6 +46,10 @@ canvas {
     margin-bottom: 30px;
 }
 
+.startbutton:hover {
+    cursor: pointer;
+}
+    
 .inputs {
     display: flex;
     width: 60vw;
