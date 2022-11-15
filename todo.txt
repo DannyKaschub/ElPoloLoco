@@ -2,8 +2,9 @@ endboss schiesen?
 handy steuerung
 tot oder sieg
 gegner drauf springen
-flaschen/coins sammeln
-flaschen einfügen
+flaschen/coins sammeln        Colidieren und sammeln haut hin. Bars werden aktualisiert
+flaschen einfügen               Funktioniert wenn auch noch nicht plaziert
+
 handymodus allgemein im quer format vollbild
 
 Hintergrund Musik?? wenn ja abschaltbar
