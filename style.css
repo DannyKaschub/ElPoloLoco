@@ -3,6 +3,11 @@
     src: url('fonts/zabars.ttf') format('truetype');
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -85,6 +90,52 @@ span {
     font-size: 56px;
 }
 
+/*MobileController*/
+
+.mobileController{
+    width: 40;
+    height: 40px;
+    padding: 5px;
+}
+
+.hud {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}  
+
+.hud div {
+    display: flex;
+}
+
+#btnleft {
+   left: 50px;
+    bottom: 20px;
+}
+
+#btnright {
+    left: 150px;
+     bottom: 20px;
+ }
+
+ #btnjump {
+    right: 150px;
+     bottom: 20px;
+ }
+
+ #btnthrow {
+    right: 50px;
+     bottom: 20px;
+ }
+
+ .flipIcon{
+    transform: scaleX(-1)
+ }
+
 /*sorgt dafür dass das canvas sich bei kleinen bildschirmen mit verkleinert*/
 @media only screen and (max-width: 720px) {
     canvas {
@@ -95,5 +146,17 @@ span {
 @media only screen and (max-height: 480px) {
     canvas {
         height: 100vh;
+    }
+
+    .header {
+        display: none;
+    }
+
+    canvas {
+        width: 100%;
+    }
+
+    .hud {
+        display: flex;
     }
 }

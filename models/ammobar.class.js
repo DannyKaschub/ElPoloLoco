@@ -1,4 +1,4 @@
-class ammobar extends DrawableObject {
+class bottlebar extends DrawableObject {
 
     IMAGES = [
         'img_pollo_locco/img/7_statusbars/1_statusbar/3_statusbar_bottle/green/0.png',
@@ -9,7 +9,7 @@ class ammobar extends DrawableObject {
         'img_pollo_locco/img/7_statusbars/1_statusbar/3_statusbar_bottle/green/100.png'
     ];
 
-    percentage = 100;
+    percentage = 0;
 
     constructor() {
         super();
@@ -18,7 +18,7 @@ class ammobar extends DrawableObject {
         this.y = 50;
         this.width = 200;
         this.height = 60;
-        this.setPercentage(100);
+        this.setPercentage(0);
     }
 
     setPercentage(percentage) {

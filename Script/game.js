@@ -15,8 +15,6 @@ function startGame() {
 function init(){
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-
-    console.log('mein charakter ist ', world.character);
 }
 
 window.addEventListener("keydown", (e) => {
