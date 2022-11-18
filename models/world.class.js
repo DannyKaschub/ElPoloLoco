@@ -12,6 +12,12 @@ class World {
     bottlebar = new bottlebar();
     bottleAmount = 0;
     throwableObjects = [];
+    //soundfiles
+    item_sound = new Audio('audio/item.mp3')
+    win_sound = new Audio('audio/win.mp3')
+    lose_sound = new Audio('audio/lose.mp3')
+    chicken_sound = new Audio('audio/chicken.mp3')
+    bottle_break_sound = new Audio('audio/bottle_breaking.mp3')
 
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
@@ -66,9 +72,11 @@ class World {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy) && this.character.isAboveGround() && enemy instanceof Chicken && !enemy.is_dead) {
                 enemy.is_dead = true;
+                this.chicken_sound.play()
             }
             if (this.character.isColliding(enemy) && this.character.isAboveGround() && enemy instanceof smallChicken && !enemy.is_dead) {
                 enemy.is_dead = true;
+                this.chicken_sound.play()
             }
         });
     }
@@ -81,7 +89,7 @@ class World {
                 bottle.width = 0;
                 this.bottleAmount++
                 this.bottlebar.setPercentage(this.bottleAmount * 20)
-                //this.itemSound.play()   
+                this.item_sound.play()   
             }
         });
     }
@@ -93,7 +101,7 @@ class World {
                 coin.width = 0;
                 this.coinAmount++
                 this.coinbar.setPercentage(this.coinAmount * 20)
-                //this.itemSound.play()   
+                this.item_sound.play()   
             }
         });
     }

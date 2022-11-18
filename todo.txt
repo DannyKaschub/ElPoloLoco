@@ -1,15 +1,13 @@
 endboss schiesen?
+
 handy steuerung
+
 tot oder sieg
-gegner drauf springen           functioniert soweit gut
-flaschen/coins sammeln        Colidieren und sammeln haut hin. Bars werden aktualisiert
-flaschen einfügen               Funktioniert wenn auch noch nicht plaziert
 
 handymodus allgemein im quer format vollbild
 
 Hintergrund Musik?? wenn ja abschaltbar
 
 flasche verschwindet (KANN kaputgehen wenn sie etwas triftn verschwinden muss sie)
-Keine Scrollbalken. Nie egal wo
 
-Check collision aufräumen. einzelne untermenüs bauen   Alles erstmal in einzelne funktionen ausgelagert
+Keine Scrollbalken. Nie egal wo
