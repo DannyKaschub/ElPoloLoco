@@ -12,4 +12,4 @@ Hintergrund Musik?? wenn ja abschaltbar
 flasche verschwindet (KANN kaputgehen wenn sie etwas triftn verschwinden muss sie)
 Keine Scrollbalken. Nie egal wo
 
-Check collision aufräumen. einzelne untermenüs bauen
+Check collision aufräumen. einzelne untermenüs bauen   Alles erstmal in einzelne funktionen ausgelagert

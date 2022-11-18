@@ -74,9 +74,6 @@ class Character extends MovableObject {
             this.world.camera_x = -this.x + 300
         }, 1000 / 60);
 
-
-
-
         setInterval(() => {
 
             if (this.isDead()) {
@@ -91,10 +88,9 @@ class Character extends MovableObject {
                 }
             }
         }, 100);
-}
+    }
 
-jump(){
-    this.speedy = 30;
-}
-
+    jump() {
+        this.speedy = 30;
+    }
 }

@@ -35,13 +35,23 @@ class World {
 
     checkThrowObjects() {
         if (this.keyboard.D) {
-            let bottle = new ThrowableObject(this.character.x + 100, this.character.y + 100);
-            this.throwableObjects.push(bottle);
+            if (!this.bottleAmount == 0) {
+                let bottle = new ThrowableObject(this.character.x + 100, this.character.y + 100);
+                this.throwableObjects.push(bottle);
+                this.bottleAmount--
+                this.bottlebar.setPercentage(this.bottleAmount * 20)
+            }
         }
     }
 
     checkCollisions() {
+        this.CharacterRunsEnemy()
+        this.CharacterJumpEnemy()
+        this.CharacterCollectBottle()
+        this.CharacterCollectCoin()
+    }
 
+    CharacterRunsEnemy() {
         // enemy hit character
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy) && !this.character.isAboveGround() && !enemy.is_dead) {
@@ -49,9 +59,10 @@ class World {
                 this.statusBar.setPercentage(this.character.energy);
             }
         });
+    }
 
+    CharacterJumpEnemy() {
         //kill enemy by jump
-
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy) && this.character.isAboveGround() && enemy instanceof Chicken && !enemy.is_dead) {
                 enemy.is_dead = true;
@@ -60,7 +71,9 @@ class World {
                 enemy.is_dead = true;
             }
         });
+    }
 
+    CharacterCollectBottle() {
         //Check bottle Colliding Character
         this.level.bottles.forEach(bottle => {
             if (this.character.isColliding(bottle) && (bottle.height != 0 && bottle.width != 0)) {
@@ -71,8 +84,8 @@ class World {
                 //this.itemSound.play()   
             }
         });
-
-
+    }
+    CharacterCollectCoin() {
         //Check Coin collision Character
         this.level.coins.forEach(coin => {
             if (this.character.isColliding(coin) && (coin.height != 0 && coin.width != 0)) {
