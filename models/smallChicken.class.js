@@ -11,10 +11,6 @@ class smallChicken extends MovableObject {
         'img_pollo_locco/img/3_enemies_chicken/chicken_small/1_walk/3_w.png'
     ];
 
-    IMAGES_DEAD = [
-        'img_pollo_locco/img/3_enemies_chicken/chicken_small/2_dead/dead.png'
-    ];
-
     constructor() {
         super().loadImage('img_pollo_locco/img/3_enemies_chicken/chicken_normal/1_walk/1_w.png');
 
@@ -25,18 +21,22 @@ class smallChicken extends MovableObject {
     }
 
     animate() {
-        setInterval( () => {
+        this.move = setInterval( () => {
             this.x -= this.speed;
         }, 1000/60);
 
-        this.moveLeft();
-        setInterval(() => {
-            this.playAnimation(this.IMAGES_WALKING)
+        this.walkAnimation = setInterval(() => {
+            if (!this.is_dead) {
+                this.playAnimation(this.IMAGES_WALKING) 
+            } else {
+                this.loadImage('img_pollo_locco/img/3_enemies_chicken/chicken_small/2_dead/dead.png');
+                this.stopAnimation();
+            }  
         }, 50);
     }
 
     stopAnimation() {
         clearInterval(this.move)
-        clearInterval(this.animationWalking)
+        clearInterval(this.walkAnimation)
     }
 }

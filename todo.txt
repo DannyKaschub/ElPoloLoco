@@ -1,7 +1,7 @@
 endboss schiesen?
 handy steuerung
 tot oder sieg
-gegner drauf springen
+gegner drauf springen           functioniert soweit gut
 flaschen/coins sammeln        Colidieren und sammeln haut hin. Bars werden aktualisiert
 flaschen einfügen               Funktioniert wenn auch noch nicht plaziert
 
@@ -11,3 +11,5 @@ Hintergrund Musik?? wenn ja abschaltbar
 
 flasche verschwindet (KANN kaputgehen wenn sie etwas triftn verschwinden muss sie)
 Keine Scrollbalken. Nie egal wo
+
+Check collision aufräumen. einzelne untermenüs bauen

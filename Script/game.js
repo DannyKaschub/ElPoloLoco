@@ -7,8 +7,8 @@ let world;
 function startGame() {
     document.getElementById('startIMG').classList.add('d-none');
     document.getElementById('startbutton').classList.add('d-none');
-    document.getElementById('inputs').classList.add('d-none');
     document.getElementById('canvas').classList.remove('d-none');
+    document.getElementById('inputs').classList.add('opacity50');
     init();
 }
 
