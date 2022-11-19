@@ -11,6 +11,7 @@ class World {
     coinAmount = 0;
     bottlebar = new bottlebar();
     bottleAmount = 0;
+    Endbossbar = new Endbossbar();
     throwableObjects = [];
     //soundfiles
     item_sound = new Audio('audio/item.mp3')
@@ -35,7 +36,7 @@ class World {
     run() {
         setInterval(() => {
             this.checkCollisions();
-            this.checkThrowObjects();
+            this.checkThrowObjects(); 
         }, 100);
     }
 
@@ -62,6 +63,7 @@ class World {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy) && !this.character.isAboveGround() && !enemy.is_dead) {
                 this.character.hit();
+                this.
                 this.statusBar.setPercentage(this.character.energy);
             }
         });
@@ -120,6 +122,7 @@ class World {
         this.addToMap(this.statusBar);
         this.addToMap(this.coinbar);
         this.addToMap(this.bottlebar);
+        this.addToMap(this.Endbossbar);
         this.addObjectsToMap(this.throwableObjects);
 
         let self = this;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +19,7 @@
     <script src="models/status-bar.class.js"></script>
     <script src="models/coinbar.class.js"></script>
     <script src="models/bottlebar.class.js"></script>
+    <script src="models/endbossbar.class.js"></script>
     <script src="models/world.class.js"></script>
     <script src="models/background-object.class.js"></script>
     <script src="models/keyboard.class.js"></script>
@@ -27,15 +29,18 @@
     <script src="levels/level1.js"></script>
     <script src="Script/game.js"></script>
 </head>
-<body>
+
+<body id="body">
+
+    <!--Startmenu-->
     <h1 class="header" id="header">El Pollo Loco</h1>
     <div id="startIMG">
         <img class="startIMG" src="img_pollo_locco/img/9_intro_outro_screens/start/startscreen_1.png" alt="">
     </div>
-
+    <!--Playground-->
     <canvas class="d-none" id="canvas" width="720px" height="480px">
     </canvas>
-
+    <!--inputhelp-->
     <div class="inputs" id="inputs">
         <div>
             <img class="icon" src="img_pollo_locco/img/10_icons/arrow.png" alt="">
@@ -54,21 +59,33 @@
             <span>Throw</span>
         </div>
     </div>
-    
+
+
+<!--Startbutton-->
     <div id="startbutton">
         <button class="startbutton" onclick="startGame()">Start Game</button>
     </div>
 
-<div class="hud">
-    <div>
-        <div><img id="btnleft" class="mobileController flipIcon" src="img_pollo_locco/img/10_icons/arrowMobilWalk.png" alt=""></div>
-        <div><img id="btnright" class="mobileController" src="img_pollo_locco/img/10_icons/arrowMobilWalk.png" alt=""></div>
+    <!--BobileControls-->
+    <div class="hud">
+        <div>
+            <div>
+                <img onclick="mobileInput()" id="btnleft" class="mobileController flipIcon" src="img_pollo_locco/img/10_icons/arrowMobilWalk.png" alt="">
+            </div>
+            <div onclick="mobileInput()">
+                <img id="btnright" class="mobileController" src="img_pollo_locco/img/10_icons/arrowMobilWalk.png" alt="">
+            </div>
+        </div>
+        <div>
+            <div onclick="mobileInput()">
+                <img id="btnjump" class="mobileController" src="img_pollo_locco/img/10_icons/arrowMobilJump.png" alt="">
+            </div>
+            <div onclick="mobileInput()">
+                <img id="btnthrow" class="mobileController" src="img_pollo_locco/img/10_icons/arrowMobilJump.png" alt="">
+            </div>
+        </div>
     </div>
-    <div>
-        <div><img id="btnjump" class="mobileController" src="img_pollo_locco/img/10_icons/arrowMobilJump.png" alt=""></div>
-        <div><img id="btnthrow" class="mobileController" src="img_pollo_locco/img/10_icons/arrowMobilJump.png" alt=""></div>
-    </div>
-</div>
-    
+
 </body>
+
 </html>

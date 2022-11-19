@@ -143,6 +143,16 @@ span {
     transform: scaleX(-1)
  }
 
+ .LoseIMG {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+ }
+
+ .LoseIMG img{
+    width: 80%;
+ }
+
 /*sorgt dafür dass das canvas sich bei kleinen bildschirmen mit verkleinert*/
 @media only screen and (max-width: 720px) {
     canvas {
