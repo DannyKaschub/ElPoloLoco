@@ -11,3 +11,23 @@ Hintergrund Musik?? wenn ja abschaltbar
 flasche verschwindet (KANN kaputgehen wenn sie etwas triftn verschwinden muss sie)
 
 Keine Scrollbalken. Nie egal wo
+
+
+sound für eigenen tresser einfügen
+
+
+
+  checkCollisionBottle() {
+    this.level.enemies.forEach((enemy) => {
+      this.throwableObjects.forEach((bottle) => {
+        if (bottle.isColliding(enemy) && !bottle.splashed) {
+          enemy.hit();
+          this.getPoints(enemy);
+          bottle.enemyHit = true;
+          if (enemy instanceof Endboss) {
+            this.statusBarEndboss.setPercentage(enemy.energy);
+          }
+        }
+      })
+    })
+  }

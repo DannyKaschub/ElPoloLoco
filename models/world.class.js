@@ -20,6 +20,7 @@ class World {
     chicken_sound = new Audio('audio/chicken.mp3')
     bottle_break_sound = new Audio('audio/bottle_breaking.mp3')
 
+
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
@@ -56,6 +57,7 @@ class World {
         this.CharacterJumpEnemy()
         this.CharacterCollectBottle()
         this.CharacterCollectCoin()
+        this.BottleHitEndboss()
     }
 
     CharacterRunsEnemy() {
@@ -63,7 +65,6 @@ class World {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy) && !this.character.isAboveGround() && !enemy.is_dead) {
                 this.character.hit();
-                this.
                 this.statusBar.setPercentage(this.character.energy);
             }
         });
@@ -106,11 +107,20 @@ class World {
                 this.item_sound.play()   
             }
         });
+
+    }
+
+    BottleHitEndboss() {
+        this.level.bottles.forEach(bottle => {
+            if(this.endboss.isColliding(bottle) && (throwableObject.heigth !=0 && throwableObject.width !=0 && throwableObject.y > 90)) {
+                this.endboss.hit()
+                this.bottle_break_sound.play()
+            }
+        })
     }
 
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
         this.ctx.translate(this.camera_x, 0);
         this.addObjectsToMap(this.level.backgroundobjects);
         this.addObjectsToMap(this.level.clouds);

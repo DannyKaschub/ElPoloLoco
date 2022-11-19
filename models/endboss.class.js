@@ -34,15 +34,24 @@ class Endboss extends MovableObject{
     ]
 
     constructor(){
-        super().loadImage(this.IMAGES_WALKING[0]);
+        super().loadImage(this.IMAGES_ALERT[0]);
+        this.loadImages(this.IMAGES_ALERT);
         this.loadImages(this.IMAGES_WALKING);
         this.x = 2000;
         this.animate();
     }
-
+/*  Startanimation für ersten contakt aus video
     animate() {
+        let i=0
         setInterval(() => {
-            this.playAnimation(this.IMAGES_WALKING)
+            if (i<10){
+                this.playAnimation(this.IMAGES_ALERT)
+            } else {
+                this.playAnimation(this.IMAGES_WALKING)
+            }
+            i++;
+            if(World.character.x )
+
         }, 60);
-    }
+    }*/ 
 }
