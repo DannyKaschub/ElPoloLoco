@@ -111,11 +111,13 @@ class World {
     }
 
     BottleHitEndboss() {
-        this.level.bottles.forEach(bottle => {
-            if(this.endboss.isColliding(bottle) && (throwableObject.heigth !=0 && throwableObject.width !=0 && throwableObject.y > 90)) {
-                this.endboss.hit()
-                this.bottle_break_sound.play()
-            }
+        this.level.enemies.forEach((enemy) => {
+            this.throwableObjects.forEach((bottle) => {
+                if (bottle.isColliding(enemy) && enemy instanceof Endboss){
+                    enemy.hit();
+                    this.Endbossbar.setPercentage(enemy.energy);
+                }
+            })
         })
     }
 

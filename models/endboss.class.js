@@ -40,7 +40,7 @@ class Endboss extends MovableObject{
         this.x = 2000;
         this.animate();
     }
-/*  Startanimation für ersten contakt aus video
+  //Startanimation für ersten contakt aus video
     animate() {
         let i=0
         setInterval(() => {
@@ -50,8 +50,6 @@ class Endboss extends MovableObject{
                 this.playAnimation(this.IMAGES_WALKING)
             }
             i++;
-            if(World.character.x )
-
         }, 60);
-    }*/ 
+    }
 }
