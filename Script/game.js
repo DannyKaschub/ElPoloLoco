@@ -17,6 +17,10 @@ function init(){
     world = new World(canvas, keyboard);
 }
 
+function clearAllIntervals() {
+    for (let i = 1; i < 9999; i++) window.clearInterval(i);
+  }
+
 window.addEventListener("keydown", (e) => {
     if(e.keyCode == 39) {
         keyboard.RIGHT = true;

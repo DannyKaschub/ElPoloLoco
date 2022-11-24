@@ -38,7 +38,15 @@ class World {
         setInterval(() => {
             this.checkCollisions();
             this.checkThrowObjects(); 
+            this.checkGameend();
         }, 100);
+    }
+
+    checkGameend(){
+        if (this.character.enemy == 0) {
+            document.getElementById('lostGame').classList.remove('d-none');
+            this.lose_sound.play();
+        }
     }
 
     checkThrowObjects() {
