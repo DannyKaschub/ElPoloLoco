@@ -13,6 +13,7 @@ class World {
     bottleAmount = 0;
     Endbossbar = new Endbossbar();
     throwableObjects = [];
+    firstContact = false;
     //soundfiles
     item_sound = new Audio('audio/item.mp3')
     win_sound = new Audio('audio/win.mp3')
@@ -39,6 +40,7 @@ class World {
             this.checkCollisions();
             this.checkThrowObjects(); 
             this.checkGameend();
+            this.checkfirstContact();
         }, 100);
     }
 
@@ -129,6 +131,13 @@ class World {
                 }
             })
         })
+    }
+
+    checkfirstContact() {
+        if(this.character.x> 1700 && !firstContact){
+        firstContact = true;
+        console.log(firstContact);
+        }
     }
 
     draw() {

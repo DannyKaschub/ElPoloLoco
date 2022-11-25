@@ -39,6 +39,7 @@ class Endboss extends MovableObject{
         this.loadImages(this.IMAGES_WALKING);
         this.x = 2000;
         this.animate();
+
     }
   //Startanimation für ersten contakt aus video
     animate() {
