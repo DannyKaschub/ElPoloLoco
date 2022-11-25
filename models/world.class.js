@@ -43,9 +43,11 @@ class World {
     }
 
     checkGameend(){
-        if (this.character.enemy == 0) {
+        //console.log(this.character.energy)
+        if (this.character.energy == 0) {
             document.getElementById('lostGame').classList.remove('d-none');
             this.lose_sound.play();
+            clearAllIntervals();
         }
     }
 

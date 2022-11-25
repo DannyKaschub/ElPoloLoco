@@ -53,6 +53,13 @@ canvas {
     margin-bottom: 30px;
 }
 
+.restartbutton {
+    position: absolute;
+    bottom: 60px;
+    left: auto;
+    right: auto;
+}
+
 .startbutton:hover {
     cursor: pointer;
 }
@@ -148,7 +155,7 @@ span {
     top: auto;
     bottom: auto;
     left: auto;
-    right: auto;
+    right: auto;  
 }
 
 .lostGame img{

@@ -9,6 +9,7 @@ function startGame() {
     document.getElementById('startbutton').classList.add('d-none');
     document.getElementById('canvas').classList.remove('d-none');
     document.getElementById('inputs').classList.add('opacity50');
+    document.getElementById('lostGame').classList.add('d-none');
     init();
 }
 
