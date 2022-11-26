@@ -14,12 +14,14 @@ class World {
     Endbossbar = new Endbossbar();
     throwableObjects = [];
     firstContact = false;
+    allowMusic = true;
     //soundfiles
     item_sound = new Audio('audio/item.mp3')
     win_sound = new Audio('audio/win.mp3')
     lose_sound = new Audio('audio/lose.mp3')
     chicken_sound = new Audio('audio/chicken.mp3')
     bottle_break_sound = new Audio('audio/bottle_breaking.mp3')
+    backgroundMusic = new Audio('audio/instrumental.mp3')
 
 
     constructor(canvas, keyboard) {
@@ -42,6 +44,8 @@ class World {
             this.checkGameend();
             this.checkfirstContact();
         }, 100);
+
+        this.playGameMusic(); //wird nur ausgelöst
     }
 
     checkGameend(){
@@ -123,6 +127,7 @@ class World {
     }
 
     BottleHitEndboss() {
+        //flasche trifft endboss
         this.level.enemies.forEach((enemy) => {
             this.throwableObjects.forEach((bottle) => {
                 if (bottle.isColliding(enemy) && enemy instanceof Endboss){
@@ -133,10 +138,20 @@ class World {
         })
     }
 
+    //erster contact zwichen Characrer und peppe
+
     checkfirstContact() {
         if(this.character.x> 1700 && !firstContact){
         firstContact = true;
         console.log(firstContact);
+        }
+    }
+
+    // Hintergrundmusic abspielen
+
+    playGameMusic(){
+        if (this.allowMusic) {
+            this.backgroundMusic.play();
         }
     }
 

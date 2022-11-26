@@ -1,8 +1,5 @@
-endboss schiesen?
 
 handy steuerung
-
-tot oder sieg
 
 handymodus allgemein im quer format vollbild
 
@@ -15,19 +12,4 @@ Keine Scrollbalken. Nie egal wo
 
 sound für eigenen tresser einfügen
 
-
-
-  checkCollisionBottle() {
-    this.level.enemies.forEach((enemy) => {
-      this.throwableObjects.forEach((bottle) => {
-        if (bottle.isColliding(enemy) && !bottle.splashed) {
-          enemy.hit();
-          this.getPoints(enemy);
-          bottle.enemyHit = true;
-          if (enemy instanceof Endboss) {
-            this.statusBarEndboss.setPercentage(enemy.energy);
-          }
-        }
-      })
-    })
-  }
+flasche brauch eigene flugbahn. wenn ich laufe "läuft" sie mit auf ihrer bahn
