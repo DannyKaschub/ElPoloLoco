@@ -44,8 +44,7 @@ class World {
             this.checkGameend();
             this.checkfirstContact();
         }, 100);
-
-        this.playGameMusic(); //wird nur ausgelöst
+        this.playBackgroundMusic();
     }
 
     checkGameend(){
@@ -147,11 +146,11 @@ class World {
         }
     }
 
-    // Hintergrundmusic abspielen
-
-    playGameMusic(){
-        if (this.allowMusic) {
+    playBackgroundMusic(){
+        if (this.allowMusic){
             this.backgroundMusic.play();
+        } else {
+            this.backgroundMusic.pause();
         }
     }
 

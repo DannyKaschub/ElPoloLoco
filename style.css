@@ -13,7 +13,6 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
     margin: 0;
     padding: 0;
     background-image: url('img_pollo_locco/img/5_background/desert_background.png');
@@ -165,32 +164,102 @@ span {
     width: 80vw;
 }
 
+.rotatePhone{
+    display: none;
+    background: black;
+    color: white;
+    font-size: 32px;
+}
+
+
 /*sorgt dafür dass das canvas sich bei kleinen bildschirmen mit verkleinert*/
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 720px) and (orientation:landscape)  {
     canvas {
-        width: 100vh;
-        margin: 0;
+         width: 100vw ;
+         height: 100vh;
+         margin-bottom: 0;
+    }
+
+
+
+    #startIMG {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .startIMG{
+        height: 100vh;
+        width: 100vw;
+        margin-bottom: 0;
+    }
+
+    #startbutton{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .startbutton {
+        bottom: 10px;
+        margin-bottom: 0;
+        height: 50px;
+        width: 125px;
+        border-radius: 10px;
+        font-size: 18px;
+        border-width: 5px;
     }
 
     .inputs {
         display: none;
     }
+
+    .header{
+        display: none;
+    }
 }
 
-@media only screen and (max-height: 480px) {
-    canvas {
-        height: 100vh;
+@media only screen and (orientation:portrait) {
+    .header{
+        display: none;
     }
-
-    .header {
+    #startIMG{
         display: none;
     }
 
-    canvas {
-        width: 100%;
+    #startIMG img{
+        display: none;
     }
 
-    .hud {
+    #canvas{
+        display: none;
+    }
+
+    .inputs{
+        display: none;
+    }
+
+    #startbutton{
+        display: none;
+    }
+
+    .hud{
+        display: none;
+    }
+
+    .lostGame{
+        display: none;
+    }
+
+    .rotatePhone{
         display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
     }
 }

@@ -63,6 +63,13 @@ window.addEventListener("keyup", (e) => {
     if (e.keyCode == 68) {
         keyboard.D = false;
     }
+    if(e.keyCode == 77 && world.allowMusic == true){
+        world.allowMusic = false;
+        world.playBackgroundMusic();
+    } else if (e.keyCode == 77 && world.allowMusic == false){
+        world.allowMusic = true;
+        world.playBackgroundMusic();
+    }
 });
 
 function mobileInput() {
