@@ -164,11 +164,8 @@ span {
     width: 80vw;
 }
 
-.rotatePhone{
+.rotatePhone span{
     display: none;
-    background: black;
-    color: white;
-    font-size: 32px;
 }
 
 
@@ -179,8 +176,6 @@ span {
          height: 100vh;
          margin-bottom: 0;
     }
-
-
 
     #startIMG {
         height: 100vh;
@@ -213,6 +208,10 @@ span {
         border-width: 5px;
     }
 
+    .hud{
+        display: flex;
+    }
+
     .inputs {
         display: none;
     }
@@ -220,9 +219,13 @@ span {
     .header{
         display: none;
     }
+
+    .rotatePhone span{
+        display: none;
+    }
 }
 
-@media only screen and (orientation:portrait) {
+@media only screen and (max-width: 720px)  and (orientation:portrait) {
     .header{
         display: none;
     }
@@ -254,6 +257,10 @@ span {
         display: none;
     }
 
+    .rotatePhone span{
+        display: flex;
+    }
+
     .rotatePhone{
         display: flex;
         text-align: center;
@@ -261,5 +268,8 @@ span {
         align-items: center;
         height: 100vh;
         width: 100vw;
+        background: black;
+        color: white;
+        font-size: 32px;
     }
 }
