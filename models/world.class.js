@@ -42,7 +42,6 @@ class World {
             this.checkCollisions();
             this.checkThrowObjects(); 
             this.checkGameend();
-            this.checkfirstContact();
         }, 100);
         this.playBackgroundMusic();
     }
@@ -75,6 +74,7 @@ class World {
         this.CharacterCollectBottle()
         this.CharacterCollectCoin()
         this.BottleHitEndboss()
+        this.checkfirstContact();
     }
 
     CharacterRunsEnemy() {
@@ -139,12 +139,12 @@ class World {
         })
     }
 
-    //erster contact zwichen Characrer und peppe
+    //erster contact zwichen Characrer und Endboss
 
     checkfirstContact() {
-        if(this.character.x> 1700 && !firstContact){
-        firstContact = true;
-        console.log(firstContact);
+        if(this.character.x> 1700 && !this.firstContact){
+        this.firstContact = true;
+        console.log(this.firstContact)
         }
     }
 

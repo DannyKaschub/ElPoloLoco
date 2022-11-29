@@ -34,13 +34,7 @@ class Chicken extends MovableObject {
                 this.playAnimation(this.IMAGES_WALKING) 
             } else {
                 this.loadImage('img_pollo_locco/img/3_enemies_chicken/chicken_normal/2_dead/dead.png');
-                this.stopAnimation();
             }  
         }, 50);
-    }
-
-    stopAnimation() {
-        clearInterval(this.move)
-        clearInterval(this.walkAnimation)
     }
 }

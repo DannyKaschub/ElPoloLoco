@@ -1,15 +1,12 @@
 
-handy steuerung
-
-handymodus allgemein im quer format vollbild
-
-Hintergrund Musik?? wenn ja abschaltbar
-
 flasche verschwindet (KANN kaputgehen wenn sie etwas triftn verschwinden muss sie)
-
 Keine Scrollbalken. Nie egal wo
-
-
 sound für eigenen tresser einfügen
 
 flasche brauch eigene flugbahn. wenn ich laufe "läuft" sie mit auf ihrer bahn
+
+
+
+
+
+galaxy s8 scheis responsive
