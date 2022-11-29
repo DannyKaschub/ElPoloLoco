@@ -51,6 +51,8 @@ class World {
         //console.log(this.character.energy)
         if (this.character.energy == 0) {
             document.getElementById('lostGame').classList.remove('d-none');
+            this.backgroundMusic.pause();
+            this.backgroundMusic.currentTime = 0;
             this.lose_sound.play();
             clearAllIntervals();
         }

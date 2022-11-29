@@ -36,8 +36,8 @@ canvas {
 }
 
 .startIMG {
-    height: 60vh;
-    width: 60vw;
+    height: 480px;
+    width: 720px;
     margin-bottom: 10px;
 }
 
@@ -192,15 +192,14 @@ span {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 0;
+        top: 0;
         height: 15vh;
         display: flex;
         justify-content: center;
     }
 
     .startbutton {
-        bottom: 10px;
-        margin-bottom: 0;
+        margin-top: 10px;
         height: 50px;
         width: 125px;
         border-radius: 10px;
@@ -225,7 +224,8 @@ span {
     }
 }
 
-@media only screen and (max-width: 720px)  and (orientation:portrait) {
+/*deaktivier alles sobald das handy ins Portrait ist*/
+@media only screen and (max-width: 500px)  and (orientation:portrait) {
     .header{
         display: none;
     }

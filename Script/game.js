@@ -83,12 +83,12 @@ function mobileInput() {
         keyboard.LEFT = false
     });
 
-    document.getElementById('btnRight').addEventListener('touchstart', (e) => {
+    document.getElementById('btnright').addEventListener('touchstart', (e) => {
         e.preventDefault()
         keyboard.RIGHT = true
     })
     
-    document.getElementById('btnRight').addEventListener('touchend', (e) => {
+    document.getElementById('btnright').addEventListener('touchend', (e) => {
         e.preventDefault()
         keyboard.RIGHT = false
     })
