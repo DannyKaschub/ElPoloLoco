@@ -22,6 +22,7 @@ class World {
     chicken_sound = new Audio('audio/chicken.mp3')
     bottle_break_sound = new Audio('audio/bottle_breaking.mp3')
     backgroundMusic = new Audio('audio/instrumental.mp3')
+    peppehitsound = new Audio('audio/audio_pain.mp3')
 
 
     constructor(canvas, keyboard) {
@@ -83,6 +84,7 @@ class World {
         this.level.enemies.forEach((enemy) => {
             if (this.character.isColliding(enemy) && !this.character.isAboveGround() && !enemy.is_dead) {
                 this.character.hit();
+                this.peppehitsound.play();
                 this.statusBar.setPercentage(this.character.energy);
             }
         });
