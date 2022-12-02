@@ -1,7 +1,8 @@
-class Endboss extends MovableObject{
+class Endboss extends MovableObject {
     height = 400;
     width = 250;
     y = 50;
+    firstContact = false;
 
     IMAGES_WALKING = [
         'img_pollo_locco/img/4_enemie_boss_chicken/1_walk/G1.png',
@@ -21,6 +22,17 @@ class Endboss extends MovableObject{
         'img_pollo_locco/img/4_enemie_boss_chicken/2_alert/G12.png'
     ];
 
+    IMAGES_ATTACK = [
+        "img_pollo_locco/img/4_enemie_boss_chicken/3_attack/G13.png",
+        "img_pollo_locco/img/4_enemie_boss_chicken/3_attack/G14.png",
+        "img_pollo_locco/img/4_enemie_boss_chicken/3_attack/G15.png",
+        "img_pollo_locco/img/4_enemie_boss_chicken/3_attack/G16.png",
+        "img_pollo_locco/img/4_enemie_boss_chicken/3_attack/G17.png",
+        "img_pollo_locco/img/4_enemie_boss_chicken/3_attack/G18.png",
+        "img_pollo_locco/img/4_enemie_boss_chicken/3_attack/G19.png",
+        "img_pollo_locco/img/4_enemie_boss_chicken/3_attack/G20.png"
+    ];
+
     IMAGES_HURT = [
         'img_pollo_locco/img/4_enemie_boss_chicken/4_hurt/G21.png',
         'img_pollo_locco/img/4_enemie_boss_chicken/4_hurt/G22.png',
@@ -35,11 +47,28 @@ class Endboss extends MovableObject{
 
     world;
 
-    constructor(){
+    constructor() {
         super().loadImage('img_pollo_locco/img/4_enemie_boss_chicken/2_alert/G5.png');
         this.loadImages(this.IMAGES_ALERT);
         this.loadImages(this.IMAGES_WALKING);
-        this.x = 2000;
+        this.loadImages(this.IMAGES_ATTACK);
+        this.x = 2000; //startposition
+        this.animate();
     }
 
+    animate() {
+            setInterval(() => {
+                if (!this.firstContact){
+                    this.playAnimation(this.IMAGES_ALERT);
+                } else {
+                    this.playAnimation(this.IMAGES_ATTACK);
+                }
+            }, 200);
+
+        this.move = setInterval(() => {
+            if (this.firstContact) {
+                this.x -= 15;
+            }
+        }, 250);
+    }
 }

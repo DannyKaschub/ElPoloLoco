@@ -1,12 +1,12 @@
 const level1 = new level(
     [
+        new Endboss(), //endboss MUSS die erste (nullte) position haben für reibungslose Funktion
         new smallChicken(),
         new smallChicken(),
         new smallChicken(),
         new Chicken(),
         new Chicken(),
-        new Chicken(),
-        new Endboss()
+        new Chicken()
     ],
     [
         new Cloud()

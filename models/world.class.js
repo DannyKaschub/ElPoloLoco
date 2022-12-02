@@ -13,8 +13,8 @@ class World {
     bottleAmount = 0;
     Endbossbar = new Endbossbar();
     throwableObjects = [];
-    firstContact = false;
     allowMusic = true;
+    endboss;
     //soundfiles
     item_sound = new Audio('audio/item.mp3')
     win_sound = new Audio('audio/win.mp3')
@@ -28,6 +28,7 @@ class World {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
         this.keyboard = keyboard;
+        this.endboss = this.level.enemies[0]
         this.draw();
         this.setWorld();
         this.run();
@@ -74,7 +75,7 @@ class World {
         this.CharacterCollectBottle()
         this.CharacterCollectCoin()
         this.BottleHitEndboss()
-        this.checkfirstContact();
+        this.checkFirstContact()
     }
 
     CharacterRunsEnemy() {
@@ -139,12 +140,10 @@ class World {
         })
     }
 
-    //erster contact zwichen Characrer und Endboss
-
-    checkfirstContact() {
-        if(this.character.x> 1700 && !this.firstContact){
-        this.firstContact = true;
-        console.log(this.firstContact)
+    checkFirstContact() {
+        if (this.character.x>1700 && !this.endboss.firstContact) {
+            this.endboss.firstContact = true;
+            console.log('ja')
         }
     }
 
