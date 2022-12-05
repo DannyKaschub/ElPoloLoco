@@ -66,6 +66,7 @@ class World {
                 this.throwableObjects.push(bottle);
                 this.bottleAmount--
                 this.bottlebar.setPercentage(this.bottleAmount * 20)
+                this.keyboard.D = false;
             }
         }
     }
@@ -77,6 +78,7 @@ class World {
         this.CharacterCollectCoin()
         this.BottleHitEndboss()
         this.checkFirstContact()
+        this.bottlehitGround()
     }
 
     CharacterRunsEnemy() {
@@ -116,6 +118,7 @@ class World {
             }
         });
     }
+
     CharacterCollectCoin() {
         //Check Coin collision Character
         this.level.coins.forEach(coin => {
@@ -130,16 +133,28 @@ class World {
 
     }
 
-    BottleHitEndboss() {
+   BottleHitEndboss() {
         //flasche trifft endboss
-        this.level.enemies.forEach((enemy) => {
             this.throwableObjects.forEach((bottle) => {
-                if (bottle.isColliding(enemy) && enemy instanceof Endboss){
-                    enemy.hit();
-                    this.Endbossbar.setPercentage(enemy.energy);
+                if (bottle.isColliding(this.endboss)){
+                    this.endboss.hit();
+                    this.Endbossbar.setPercentage(this.endboss.energy);
+                    this.throwableObjects =[];
+                    this.bottle_break_sound.play();
                 }
             })
-        })
+    }
+
+    bottlehitGround() {
+        console.log('1')
+        this.throwableObjects.forEach((bottle) => {
+            if (bottle.x < 100) {
+                this.throwableObjects = [];
+                this.bottle_break_sound.play();
+            }
+        } 
+        
+        )
     }
 
     checkFirstContact() {
