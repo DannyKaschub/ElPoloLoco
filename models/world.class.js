@@ -146,7 +146,7 @@ class World {
 
     bottlehitGround() {
         this.throwableObjects.forEach((bottle) => {
-            if (bottle.x < 100) {
+            if (bottle.y > 280) {
                 this.throwableObjects = [];
                 this.bottle_break_sound.play();
             }
