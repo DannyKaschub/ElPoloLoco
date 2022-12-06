@@ -45,6 +45,13 @@ class Character extends MovableObject {
     walking_sound = new Audio('sounds/walkCharacter.mp3')
     jump_sound = new Audio('audio/jump.mp3')
 
+    offset = {
+        top: 120,
+        left: 40,
+        right: 30,
+        bottom: 30
+    }
+
     constructor() {
         super().loadImage('img_pollo_locco/img/2_character_pepe/2_walk/W-21.png');
         this.loadImages(this.IMAGES_WALKING);

@@ -139,22 +139,18 @@ class World {
                 if (bottle.isColliding(this.endboss)){
                     this.endboss.hit();
                     this.Endbossbar.setPercentage(this.endboss.energy);
-                    this.throwableObjects =[];
                     this.bottle_break_sound.play();
                 }
             })
     }
 
     bottlehitGround() {
-        console.log('1')
         this.throwableObjects.forEach((bottle) => {
             if (bottle.x < 100) {
                 this.throwableObjects = [];
                 this.bottle_break_sound.play();
             }
-        } 
-        
-        )
+        })
     }
 
     checkFirstContact() {
@@ -208,6 +204,13 @@ class World {
         if (mo.otherDirection) {
             this.flipImageBack(mo);
         }
+        //rahmen
+        mo.draw(this.ctx);
+        this.ctx.beginPath();
+        this.ctx.lineWidth = '5';
+        this.ctx.strokeStyle = 'blue';
+        this.ctx.rect(mo.x, mo.y, mo.width, mo.height);
+        this.ctx.stroke();
     }
 
     flipImage(mo) {

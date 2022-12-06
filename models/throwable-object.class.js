@@ -7,6 +7,8 @@ class ThrowableObject extends MovableObject {
         "img/6_salsa_bottle/bottle_rotation/4_bottle_rotation.png"
     ]
 
+    speed = 10;
+
     constructor(x, y) {
         super().loadImage('img_pollo_locco/img/6_salsa_bottle/bottle_rotation/1_bottle_rotation.png');
         this.x = 100;
@@ -21,7 +23,7 @@ class ThrowableObject extends MovableObject {
         this.speedy = 30;
         this.applyGravity();
         setInterval( () => {
-            this.x += 10;
+            this.x += this.speed;
         }, 25);
     }
 }

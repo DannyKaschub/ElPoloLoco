@@ -12,7 +12,7 @@ class smallChicken extends MovableObject {
     ];
 
     constructor() {
-        super().loadImage('img_pollo_locco/img/3_enemies_chicken/chicken_normal/1_walk/1_w.png');
+        super().loadImage('img_pollo_locco/img/3_enemies_chicken/chicken_small/1_walk/1_w.png');
 
         this.x = 300 + Math.random() * 1000;
         this.speed = 0.3 + Math.random() * 0.5;
