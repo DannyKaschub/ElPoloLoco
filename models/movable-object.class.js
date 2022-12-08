@@ -23,10 +23,6 @@ class MovableObject extends DrawableObject{
         },1000/ 25);
     }
 
-    draw(ctx){
-        ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
-    }
-
     isAboveGround(){
         if (this instanceof ThrowableObject) {
             return true;

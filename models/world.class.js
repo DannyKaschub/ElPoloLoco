@@ -42,14 +42,13 @@ class World {
     run() {
         setInterval(() => {
             this.checkCollisions();
-            this.checkThrowObjects(); 
+            this.checkThrowObjects();
             this.checkGameend();
         }, 100);
         this.playBackgroundMusic();
     }
 
-    checkGameend(){
-        //console.log(this.character.energy)
+    checkGameend() {
         if (this.character.energy == 0) {
             document.getElementById('lostGame').classList.remove('d-none');
             this.backgroundMusic.pause();
@@ -61,13 +60,13 @@ class World {
 
     checkThrowObjects() {
         if (this.keyboard.D) {
-            if (!this.bottleAmount == 0) {
-                let bottle = new ThrowableObject(this.character.x + 100, this.character.y + 100);
+                let bottle = new ThrowableObject(this.character.x + 100 , this.character.y, this);
                 this.throwableObjects.push(bottle);
-                this.bottleAmount--
-                this.bottlebar.setPercentage(this.bottleAmount * 20)
+
+
+                //this.bottleAmount--
+                //this.bottlebar.setPercentage(this.bottleAmount * 20)
                 this.keyboard.D = false;
-            }
         }
     }
 
@@ -114,7 +113,7 @@ class World {
                 bottle.width = 0;
                 this.bottleAmount++
                 this.bottlebar.setPercentage(this.bottleAmount * 20)
-                this.item_sound.play()   
+                this.item_sound.play()
             }
         });
     }
@@ -127,21 +126,21 @@ class World {
                 coin.width = 0;
                 this.coinAmount++
                 this.coinbar.setPercentage(this.coinAmount * 20)
-                this.item_sound.play()   
+                this.item_sound.play()
             }
         });
 
     }
 
-   BottleHitEndboss() {
+    BottleHitEndboss() {
         //flasche trifft endboss
-            this.throwableObjects.forEach((bottle) => {
-                if (bottle.isColliding(this.endboss)){
-                    this.endboss.hit();
-                    this.Endbossbar.setPercentage(this.endboss.energy);
-                    this.bottle_break_sound.play();
-                }
-            })
+        this.throwableObjects.forEach((bottle) => {
+            if (bottle.isColliding(this.endboss)) {
+                this.endboss.hit();
+                this.Endbossbar.setPercentage(this.endboss.energy);
+                this.bottle_break_sound.play();
+            }
+        })
     }
 
     bottlehitGround() {
@@ -154,14 +153,14 @@ class World {
     }
 
     checkFirstContact() {
-        if (this.character.x>1700 && !this.endboss.firstContact) {
+        if (this.character.x > 1700 && !this.endboss.firstContact) {
             this.endboss.firstContact = true;
             console.log('ja')
         }
     }
 
-    playBackgroundMusic(){
-        if (this.allowMusic){
+    playBackgroundMusic() {
+        if (this.allowMusic) {
             this.backgroundMusic.play();
         } else {
             this.backgroundMusic.pause();
@@ -204,13 +203,6 @@ class World {
         if (mo.otherDirection) {
             this.flipImageBack(mo);
         }
-        //rahmen
-        mo.draw(this.ctx);
-        this.ctx.beginPath();
-        this.ctx.lineWidth = '5';
-        this.ctx.strokeStyle = 'blue';
-        this.ctx.rect(mo.x, mo.y, mo.width, mo.height);
-        this.ctx.stroke();
     }
 
     flipImage(mo) {

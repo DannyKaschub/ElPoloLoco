@@ -1,8 +1,5 @@
+Flasche ist technisch am richtigen ort aber das bild verschiebt es immer wieter nach hinten?????
 
-flasche verschwindet (KANN kaputgehen wenn sie etwas triftn verschwinden muss sie)
-Keine Scrollbalken. Nie egal wo
-galaxy s8 scheis responsive
 
-Chicken bewegt sich auch tot noch vorwärts. 
-
-Flasche Fliegt durch endboss durch genau so erst weit in den boden
+restart menü optisch anpassen 
+restart muss intervalle wieder neu starten
