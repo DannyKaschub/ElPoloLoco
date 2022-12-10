@@ -1,5 +1,3 @@
-Flasche ist technisch am richtigen ort aber das bild verschiebt es immer wieter nach hinten?????
-
 
 restart menü optisch anpassen 
 restart muss intervalle wieder neu starten

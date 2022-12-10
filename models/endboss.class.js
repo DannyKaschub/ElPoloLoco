@@ -52,6 +52,7 @@ class Endboss extends MovableObject {
         this.loadImages(this.IMAGES_ALERT);
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_ATTACK);
+        this.loadImages(this.IMAGES_DEAD);
         this.x = 2000;
         this.animate();
     }
@@ -60,6 +61,9 @@ class Endboss extends MovableObject {
             setInterval(() => {
                 if (!this.firstContact){
                     this.playAnimation(this.IMAGES_ALERT);
+                } else if (this.energy == 0) {
+                    this.playAnimation(this.IMAGES_DEAD);
+                    this.stopAnimation();
                 } else {
                     this.playAnimation(this.IMAGES_ATTACK);
                 }
@@ -70,5 +74,9 @@ class Endboss extends MovableObject {
                 this.x -= 15;
             }
         }, 250);
+    }
+
+    stopAnimation() {
+        clearInterval(this.move)
     }
 }

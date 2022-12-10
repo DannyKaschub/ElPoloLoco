@@ -10,7 +10,7 @@ class World {
     coinbar = new coinbar();
     coinAmount = 0;
     bottlebar = new bottlebar();
-    bottleAmount = 0;
+    bottleAmount = -1;
     Endbossbar = new Endbossbar();
     throwableObjects = [];
     allowMusic = true;
@@ -49,7 +49,8 @@ class World {
     }
 
     checkGameend() {
-        if (this.character.energy == 0) {
+        console.log('character:', this.character.energy, 'Boss:', this.endboss.energy )
+        if (this.endboss.energy == 0 || this.character.energy == 0) {
             document.getElementById('lostGame').classList.remove('d-none');
             this.backgroundMusic.pause();
             this.backgroundMusic.currentTime = 0;
@@ -59,14 +60,12 @@ class World {
     }
 
     checkThrowObjects() {
-        if (this.keyboard.D) {
-                let bottle = new ThrowableObject(this.character.x + 100 , this.character.y, this);
-                this.throwableObjects.push(bottle);
-
-
-                //this.bottleAmount--
-                //this.bottlebar.setPercentage(this.bottleAmount * 20)
-                this.keyboard.D = false;
+        if (this.keyboard.D && !this.bottleAmount == 0) {
+            let bottle = new ThrowableObject(this.character.x + 100, this.character.y, this);
+            this.throwableObjects.push(bottle)
+            this.bottleAmount--
+            this.bottlebar.setPercentage(this.bottleAmount * 20)
+            this.keyboard.D = false;
         }
     }
 
@@ -153,9 +152,10 @@ class World {
     }
 
     checkFirstContact() {
-        if (this.character.x > 1700 && !this.endboss.firstContact) {
-            this.endboss.firstContact = true;
-            console.log('ja')
+        if (this.character.x > 1700 || this.endboss.energy < 100) {
+            if (!this.endboss.firstContact == true) {
+                this.endboss.firstContact = true;
+            }
         }
     }
 
@@ -175,13 +175,13 @@ class World {
         this.addObjectsToMap(this.level.enemies);
         this.addObjectsToMap(this.level.coins);
         this.addObjectsToMap(this.level.bottles);
+        this.addObjectsToMap(this.throwableObjects);
         this.addToMap(this.character);
         this.ctx.translate(-this.camera_x, 0);
         this.addToMap(this.statusBar);
         this.addToMap(this.coinbar);
         this.addToMap(this.bottlebar);
         this.addToMap(this.Endbossbar);
-        this.addObjectsToMap(this.throwableObjects);
 
         let self = this;
         requestAnimationFrame(function () {

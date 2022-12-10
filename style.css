@@ -55,9 +55,17 @@ canvas {
 
 .restartbutton {
     position: absolute;
-    bottom: 60px;
+    bottom: 0px;
     left: auto;
     right: auto;
+    height: 100px;
+    width: 250px;
+    border-radius: 20px;
+    font-size: 32px;
+    background-color: rgb(255, 166, 0);
+    border-width: 10px;
+    font-weight: bold;
+
 }
 
 .startbutton:hover {
@@ -152,17 +160,18 @@ span {
 
 .lostGame{
     position: absolute;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .lostGame img{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80vw;
+    width: 720px;
+    height: 480px;
+
 }
 
 .rotatePhone span{
