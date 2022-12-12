@@ -132,6 +132,7 @@ span {
 
 .hud div {
     display: flex;
+    padding: 0 10px 0 10px;
 }
 
 #btnleft {

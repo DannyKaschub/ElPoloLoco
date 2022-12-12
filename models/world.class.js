@@ -45,11 +45,13 @@ class World {
             this.checkThrowObjects();
             this.checkGameend();
         }, 100);
+        setInterval(() => {
+            this.CharacterJumpEnemy() // extra intervall für schnellere abfrage
+        }, 1000 / 60);
         this.playBackgroundMusic();
     }
 
     checkGameend() {
-        console.log('character:', this.character.energy, 'Boss:', this.endboss.energy )
         if (this.endboss.energy == 0 || this.character.energy == 0) {
             document.getElementById('lostGame').classList.remove('d-none');
             this.backgroundMusic.pause();
@@ -71,7 +73,7 @@ class World {
 
     checkCollisions() {
         this.CharacterRunsEnemy()
-        this.CharacterJumpEnemy()
+        //this.CharacterJumpEnemy()
         this.CharacterCollectBottle()
         this.CharacterCollectCoin()
         this.BottleHitEndboss()
@@ -93,11 +95,11 @@ class World {
     CharacterJumpEnemy() {
         //kill enemy by jump
         this.level.enemies.forEach((enemy) => {
-            if (this.character.isColliding(enemy) && this.character.isAboveGround() && enemy instanceof Chicken && !enemy.is_dead) {
+            if (this.character.isColliding(enemy) && this.character.isAboveGround() && enemy instanceof Chicken && !enemy.is_dead && this.character.speedy < 1) {
                 enemy.is_dead = true;
                 this.chicken_sound.play()
             }
-            if (this.character.isColliding(enemy) && this.character.isAboveGround() && enemy instanceof smallChicken && !enemy.is_dead) {
+            if (this.character.isColliding(enemy) && this.character.isAboveGround() && enemy instanceof smallChicken && !enemy.is_dead && this.character.speedy < 1) {
                 enemy.is_dead = true;
                 this.chicken_sound.play()
             }

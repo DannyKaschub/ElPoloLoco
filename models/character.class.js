@@ -42,7 +42,7 @@ class Character extends MovableObject {
 
     world;
     //sounds
-    walking_sound = new Audio('sounds/walkCharacter.mp3')
+    walking_sound = new Audio('audio/walkCharacter.mp3')
     jump_sound = new Audio('audio/jump.mp3')
 
     offset = {

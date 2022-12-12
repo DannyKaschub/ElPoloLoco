@@ -1,3 +1,5 @@
 
 restart menü optisch anpassen 
 restart muss intervalle wieder neu starten
+
+mobilebutton rechts unterscheiden. sind die selben

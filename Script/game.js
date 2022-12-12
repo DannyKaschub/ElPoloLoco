@@ -13,6 +13,10 @@ function startGame() {
     init();
 }
 
+function reloadPage() {
+    location.reload(true);
+}
+
 function init(){
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
