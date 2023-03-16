@@ -55,7 +55,7 @@ canvas {
 
 .restartbutton {
     position: absolute;
-    bottom: 0px;
+    bottom: 10px;
     left: auto;
     right: auto;
     height: 100px;

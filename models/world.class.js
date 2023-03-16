@@ -43,7 +43,8 @@ class World {
         setInterval(() => {
             this.checkCollisions();
             this.checkThrowObjects();
-            this.checkGameend();
+            this.checkGameendLose();
+            this.checkGameendWin();
         }, 100);
         setInterval(() => {
             this.CharacterJumpEnemy() // extra intervall für schnellere abfrage
@@ -51,12 +52,22 @@ class World {
         this.playBackgroundMusic();
     }
 
-    checkGameend() {
-        if (this.endboss.energy == 0 || this.character.energy == 0) {
+    checkGameendLose() {
+        if (this.character.energy == 0) {
             document.getElementById('lostGame').classList.remove('d-none');
             this.backgroundMusic.pause();
             this.backgroundMusic.currentTime = 0;
             this.lose_sound.play();
+            clearAllIntervals();
+        }
+    }
+
+    checkGameendWin() {
+        if (this.endboss.energy == 0) {
+            document.getElementById('winGame').classList.remove('d-none');
+            this.backgroundMusic.pause();
+            this.backgroundMusic.currentTime = 0;
+            this.win_sound.play();
             clearAllIntervals();
         }
     }
