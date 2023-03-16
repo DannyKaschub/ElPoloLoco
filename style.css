@@ -159,14 +159,14 @@ span {
     transform: scaleX(-1)
  }
 
-.lostGame{
+.gameEnd{
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.lostGame img{
+.gameEnd img{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -264,7 +264,7 @@ span {
         display: none;
     }
 
-    .lostGame{
+    .gameEnd{
         display: none;
     }
 
